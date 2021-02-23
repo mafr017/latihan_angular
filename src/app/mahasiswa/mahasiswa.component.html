@@ -1,0 +1,34 @@
+<hr>
+<!-- <h1>Mahasiswa works!</h1>
+<hr>
+<div>Hello {{namaMhs}}!</div>
+<input type="text" [(ngModel)]="namaMhs"> -->
+
+<form class="form" method="post" [formGroup]="mahasiswaForm">
+    <fieldset>
+        <legend>Input Mahasiswa</legend>
+        <div class="row">
+            <label class="col-sm-1" for="namaId">Nama</label>
+            <div class="col">
+                <input type="text" class="form-control" id="namaId" placeholder="Nama" [formControlName]="'namaId'">
+                <span *ngIf="!mahasiswaForm.get('namaId')?.valid &&
+                mahasiswaForm.get('namaId')?.touched" class="text-danger">Wajib diisi!</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <label class="col-sm-1" for="nimId">NIM</label>
+            <div class="col">
+                <input type="number" class="form-control" id="nimId" placeholder="NIM" [formControlName]="'nimId'">
+                <span *ngIf="!mahasiswaForm.get('nimId')?.valid &&
+                mahasiswaForm.get('nimId')?.touched" class="text-danger">Wajib diisi!</span>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <div class="col">
+                <button type="submit" (click)="simpan()" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
