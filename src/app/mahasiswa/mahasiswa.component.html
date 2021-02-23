@@ -8,18 +8,18 @@
     <fieldset>
         <legend>Input Mahasiswa</legend>
         <div class="row">
-            <label class="col-sm-1" for="namaId">Nama</label>
+            <label class="col-sm-1" for="nama">Nama</label>
             <div class="col">
-                <input type="text" class="form-control" id="namaId" placeholder="Nama" [formControlName]="'namaId'">
+                <input type="text" class="form-control" id="nama" placeholder="Nama" [formControlName]="'namaId'">
                 <span *ngIf="!mahasiswaForm.get('namaId')?.valid &&
                 mahasiswaForm.get('namaId')?.touched" class="text-danger">Wajib diisi!</span>
             </div>
         </div>
         <br>
         <div class="row">
-            <label class="col-sm-1" for="nimId">NIM</label>
+            <label class="col-sm-1" for="nim">NIM</label>
             <div class="col">
-                <input type="number" class="form-control" id="nimId" placeholder="NIM" [formControlName]="'nimId'">
+                <input type="number" class="form-control" id="nim" placeholder="NIM" [formControlName]="'nimId'">
                 <span *ngIf="!mahasiswaForm.get('nimId')?.valid &&
                 mahasiswaForm.get('nimId')?.touched" class="text-danger">Wajib diisi!</span>
             </div>

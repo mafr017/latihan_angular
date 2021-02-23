@@ -29,6 +29,14 @@ export class MahasiswaComponent implements OnInit {
     this.route.params.subscribe(rute => {
       this.id = rute.id;
       console.log(" id " + this.id);
+      if (this.id) {
+        this.mahasiswaService.getMahasiswa(this.id).subscribe(hasil => {
+          if (hasil) {
+            this.mahasiswaForm.get('namaId')?.setValue(hasil.namaId);
+            this.mahasiswaForm.get('nimId')?.setValue(hasil.nimId);
+          }
+        });
+      }
     }
     );
   }
